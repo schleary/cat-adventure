@@ -32,7 +32,7 @@ rooms.push(new Room(
   "Lots of perches, but frequently full of dogs. Kind of safe, but not a good spot for naps!",
   "Runs towards the living room",
   "Look at the living room",
-  "Safe for now. But for how long???"
+  "Safe for now. But for how long???",
   ["Kitchen"],
   "living-room",
   2
@@ -43,7 +43,7 @@ rooms.push(new Room(
   "There's a big table and some chairs and OH NO IT'S A DOG",
   "Runs towards the dining room",
   "Look at the dining room",
-  "Run, Starbuck, run!"
+  "Run, Starbuck, run!",
   ["Kitchen", "Bedroom"],
   "dining-room",
   -4
@@ -54,8 +54,8 @@ rooms.push(new Room(
   "YAY! We finally found the nice toasty warm sunbeam!",
   "Runs towards the bedroom",
   "Look at the bedroom",
-  "Finally, Starbuck is safe at last!!"
-  ["Stairs"],
+  "Finally, Starbuck is safe at last!!",
+  ["Dining Room"],
   "bedroom",
   20
 ));
@@ -71,8 +71,7 @@ var findRoom = function(roomName){
 
 var setupRoom = function(room){
 
-  document.ready.getByElementId("heading") = room.heading;
-
+  $("#heading").text = room.heading;
 
   $("#"+room.id+" .look").click(function() {
     alert( room.getDescription() );
@@ -99,9 +98,6 @@ var setupRoom = function(room){
 //
 // End fixture data!
 //
-
-// don't forget to populate this with data!
-// var starbuck = new Cat();
 
 $(document).ready(function(){
     for(var i=0;i<rooms.length;i++){
